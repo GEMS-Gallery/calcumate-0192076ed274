@@ -1,0 +1,54 @@
+/* frontend/index.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2em;
+    padding: 20px;
+    text-align: right;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+}
+
+.key {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.key.operator {
+    background-color: #f9a825;
+    color: #fff;
+}
+
+.key:active {
+    background-color: #ccc;
+}
+
+.key.operator:active {
+    background-color: #f57f17;
+}
