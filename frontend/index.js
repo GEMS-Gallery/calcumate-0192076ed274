@@ -7,6 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let operator = '';
     let firstOperand = null;
 
+    // Dark mode functionality
+    const body = document.body;
+    const modeSwitch = document.getElementById('mode-switch');
+    
+    // Check for saved mode preference
+    const currentMode = localStorage.getItem('mode') || 'light';
+    body.classList.add(currentMode);
+
+    modeSwitch.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        body.classList.toggle('light');
+        const mode = body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('mode', mode);
+    });
+
     document.querySelectorAll('.key').forEach(button => {
         button.addEventListener('click', () => {
             const value = button.getAttribute('data-value');

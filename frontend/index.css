@@ -4,25 +4,69 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+body.dark {
+    background-color: #333;
+    color: #fff;
 }
 
 .calculator {
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
 
-.display {
+.light .calculator {
+    background-color: #fff;
+}
+
+.dark .calculator {
     background-color: #222;
-    color: #fff;
+}
+
+.mode-toggle {
+    text-align: right;
+    padding: 10px;
+}
+
+#mode-switch {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.display {
     font-size: 2em;
     padding: 20px;
     text-align: right;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.light .display {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark .display {
+    background-color: #444;
+    color: #fff;
 }
 
 .keypad {
@@ -32,7 +76,6 @@ body {
 }
 
 .key {
-    background-color: #e0e0e0;
     border: none;
     padding: 20px;
     font-size: 1.5em;
@@ -40,15 +83,38 @@ body {
     transition: background-color 0.3s;
 }
 
-.key.operator {
+.light .key {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.dark .key {
+    background-color: #555;
+    color: #fff;
+}
+
+.light .key.operator {
     background-color: #f9a825;
     color: #fff;
 }
 
-.key:active {
+.dark .key.operator {
+    background-color: #f57f17;
+    color: #fff;
+}
+
+.light .key:active {
     background-color: #ccc;
 }
 
-.key.operator:active {
+.dark .key:active {
+    background-color: #777;
+}
+
+.light .key.operator:active {
     background-color: #f57f17;
+}
+
+.dark .key.operator:active {
+    background-color: #ff6f00;
 }
